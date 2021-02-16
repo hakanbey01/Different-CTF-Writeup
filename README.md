@@ -32,6 +32,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.57 seconds
 ```      
 
 **We see that http and ftp ports are open. Let's continue by sending a directory scan to the http port**
+
 **Command:** `gobuster dir -u http://10.10.70.160 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 2>/dev/null`
 
 ```
