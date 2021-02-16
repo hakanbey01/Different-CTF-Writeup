@@ -1,6 +1,6 @@
 # Different-CTF-Writeup
 
-<h2>Let's start with nmap scanning first</h2>
+<b>Let's start with nmap scanning first</b>
 PORT   STATE SERVICE REASON         VERSION
 21/tcp open  ftp     syn-ack ttl 63 vsftpd 3.0.3
 80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.29 ((Ubuntu))
@@ -25,3 +25,6 @@ Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 16.57 seconds
            Raw packets sent: 1083 (47.628KB) | Rcvd: 1045 (41.796KB)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+We see that http and ftp ports are open
