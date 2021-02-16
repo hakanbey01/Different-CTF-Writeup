@@ -63,7 +63,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 
 ```
 Index of /an***********
-[ICO]	Name	Last modified	Size	Description
+[ICO]	           Name	           Last modified	           Size	Description
 [PARENTDIR]	Parent Directory	 	- 	 
 [IMG]	           austrailian-bulldog-ant.jpg      2021-01-11 11:51 	58K	 
 [TXT]	           wordlist.txt                     2021-01-11 13:48 	394K	 
