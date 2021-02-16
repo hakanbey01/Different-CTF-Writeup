@@ -1,8 +1,8 @@
 # Different-CTF-Writeup
 
-<b><h3>Let's start with nmap scanning first</h3></b>
+## Let's start with nmap scanning first
 
-<b>Command:</b> `nmap -vv -sCV -p- 10.10.70.160`
+**Command:** `nmap -vv -sCV -p- 10.10.70.160`
 
 ```
 PORT   STATE SERVICE REASON         VERSION
@@ -31,8 +31,8 @@ Nmap done: 1 IP address (1 host up) scanned in 16.57 seconds
            Raw packets sent: 1083 (47.628KB) | Rcvd: 1045 (41.796KB)
 ```      
 
-<b><h3>We see that http and ftp ports are open. Let's continue by sending a directory scan to the http port</h3></b>
-<b>Command:</b> `gobuster dir -u http://10.10.70.160 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 2>/dev/null`
+**We see that http and ftp ports are open. Let's continue by sending a directory scan to the http port**
+**Command:** `gobuster dir -u http://10.10.70.160 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 2>/dev/null`
 
 ```
 ===============================================================
@@ -59,7 +59,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2021/02/16 12:28:38 Finished
 ===============================================================
 ```
-<h3><b>Let's visit the directory we found</b></h3>
+**Let's visit the directory we found**
 
 ```
 Index of /an***********
@@ -69,11 +69,11 @@ Index of /an***********
 [TXT]	           wordlist.txt                     2021-01-11 13:48 	394K	 
 Apache/2.4.29 (Ubuntu) Server at 10.10.70.160 Port 80
 ```
-<h3><b>Let's get these two files</b></h3>
-<b>Command:</b> `wget http://10.10.70.160/announcements/austrailian-bulldog-ant.jpg && wget http://10.10.70.160/announcements/wordlist.txt`
+**Let's get these two files**
+**Command:** `wget http://10.10.70.160/announcements/austrailian-bulldog-ant.jpg && wget http://10.10.70.160/announcements/wordlist.txt`
 
-<h3><b>Let's brute the photo using stegcracker</b></h3>
-<b>Command:</b> `stegcracker austrailian-bulldog-ant.jpg wordlist.txt`
+**Let's brute the photo using stegcracker
+Command:** `stegcracker austrailian-bulldog-ant.jpg wordlist.txt`
 
 ```
 StegCracker 2.0.9 - (https://github.com/Paradoxis/StegCracker)
@@ -86,29 +86,29 @@ Tried 49508 passwords
 Your file has been written to: austrailian-bulldog-ant.jpg.out
 1**************r
 ```
-<h3><b>Now we can look at our photo with steghide</b></h3>
-<b>Command:</b> `steghide extract -sf austrailian-bulldog-ant.jpg`
+**Now we can look at our photo with steghide
+Command:** `steghide extract -sf austrailian-bulldog-ant.jpg`
 
 ```
 Enter passphrase: 
 wrote extracted data to "user-pass-ftp.txt".
 ```
-<h3><b>Let's read the file named user-pass-ftp.txt</b></h3>
-<b>Command:</b> `cat user-pass-ftp.txt`
+**Let's read the file named user-pass-ftp.txt
+Command:** `cat user-pass-ftp.txt`
 
 ```
 RlRQLUxPR0lOClVT****************************M2FkYW5hY3JhY2s=
 ```
-<h3><b>Encrypted with base64</b></h3>
-<b>Command:</b> `cat user-pass-ftp.txt |base64 -d`
+**Encrypted with base64
+Command:** `cat user-pass-ftp.txt |base64 -d`
 
 ```
 FTP-LOGIN
 USER: h******p
 PASS: 1***********k
 ```
-<h3><b>Pretty good ... We can now connect via ftp port</b></h3>
-<b>Command:</b> `ftp 10.10.70.160` & `ls -la`
+**Pretty good ... We can now connect via ftp port
+Command:** `ftp 10.10.70.160` & `ls -la`
 
 ```
 ftp> ls -la
