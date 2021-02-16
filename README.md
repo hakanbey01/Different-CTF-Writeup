@@ -152,6 +152,7 @@ drwxr-xr-x   25 1001     1001        12288 Dec 08 22:13 wp-includes
 
 **I think the web files are installed in ftp. We can easily get php shell from here.**
 ```https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php```
+
 **Command:** `put php-reverse-shell.php` & `chmod 777 php-reverse-shell.php`
 
 **Now we can start our listener and get our inverted shell.**
