@@ -30,4 +30,31 @@ Nmap done: 1 IP address (1 host up) scanned in 16.57 seconds
            Raw packets sent: 1083 (47.628KB) | Rcvd: 1045 (41.796KB)
 ```      
 <b><h3>We see that http and ftp ports are open. Let's continue by sending a directory scan to the http port</h3></b>
+<b>Command:</b> `gobuster dir -u http://10.10.70.160 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 2>/dev/null`
+```
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.70.160
+[+] Threads:        30
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2021/02/16 12:19:41 Starting gobuster
+===============================================================
+/wp-content (Status: 301)
+/announcements (Status: 301)
+/wp-includes (Status: 301)
+/javascript (Status: 301)
+/wp-admin (Status: 301)
+/phpmyadmin (Status: 301)
+/server-status (Status: 403)
+===============================================================
+2021/02/16 12:28:38 Finished
+===============================================================
+```
+asafasf
 
