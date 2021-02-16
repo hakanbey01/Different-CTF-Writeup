@@ -2,7 +2,7 @@
 
 <b><h3>Let's start with nmap scanning first</h3></b>
 
-Input: nmap -vv -sCV -p- 10.10.70.160
+Command: `nmap -vv -sCV -p- 10.10.70.160`
 ```
 PORT   STATE SERVICE REASON         VERSION
 21/tcp open  ftp     syn-ack ttl 63 vsftpd 3.0.3
