@@ -69,4 +69,22 @@ Index of /an***********
 [TXT]	           wordlist.txt                     2021-01-11 13:48 	394K	 
 Apache/2.4.29 (Ubuntu) Server at 10.10.70.160 Port 80
 ```
-aaaa
+<h3><b>Let's get these two files</b></h3>
+<b>Command:</b> `wget http://10.10.70.160/announcements/austrailian-bulldog-ant.jpg && wget http://10.10.70.160/announcements/wordlist.txt`
+
+<h3><b>Let's brute the photo using stegcracker</b></h3>
+<b>Command:</b> `stegcracker austrailian-bulldog-ant.jpg wordlist.txt`
+
+```
+StegCracker 2.0.9 - (https://github.com/Paradoxis/StegCracker)
+Copyright (c) 2021 - Luke Paris (Paradoxis)
+
+Counting lines in wordlist..
+Attacking file 'austrailian-bulldog-ant.jpg' with wordlist 'wordlist.txt'..
+Successfully cracked file with password: 123adanaantinwar
+Tried 49508 passwords
+Your file has been written to: austrailian-bulldog-ant.jpg.out
+123adanaantinwar
+```
+aaa
+
