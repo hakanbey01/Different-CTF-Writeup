@@ -70,10 +70,11 @@ Index of /an***********
 Apache/2.4.29 (Ubuntu) Server at 10.10.70.160 Port 80
 ```
 <h3><b>Let's get these two files</b></h3>
-<b>Command:</b> `nmap -vv -sCV -p- 10.10.70.160`
+<b>Command:</b> `wget http://10.10.70.160/announcements/austrailian-bulldog-ant.jpg && wget http://10.10.70.160/announcements/wordlist.txt`
 
 <h3><b>Let's brute the photo using stegcracker</b></h3>
 <b>Command:</b> `stegcracker austrailian-bulldog-ant.jpg wordlist.txt`
+
 
 ```
 StegCracker 2.0.9 - (https://github.com/Paradoxis/StegCracker)
