@@ -108,4 +108,39 @@ USER: h******p
 PASS: 1***********k
 ```
 <h3><b>Pretty good ... We can now connect via ftp port</b></h3>
-<b>Command:</b> `
+<b>Command:</b> `ftp 10.10.70.160` & `ls -la`
+
+```
+ftp> ls -la
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+drwxrwxrwx    8 1001     1001         4096 Jan 15 12:26 .
+drwxrwxrwx    8 1001     1001         4096 Jan 15 12:26 ..
+-rw-------    1 1001     1001           88 Jan 13 11:06 .bash_history
+drwx------    2 1001     1001         4096 Jan 11 10:29 .cache
+drwx------    3 1001     1001         4096 Jan 11 10:29 .gnupg
+-rw-r--r--    1 1001     1001          554 Jan 10 22:26 .htaccess
+drwxr-xr-x    2 0        0            4096 Jan 14 16:49 an***********
+-rw-r--r--    1 1001     1001          405 Feb 06  2020 index.php
+-rw-r--r--    1 1001     1001        19915 Feb 12  2020 license.txt
+-rw-r--r--    1 1001     1001         7278 Jun 26  2020 readme.html
+-rw-r--r--    1 1001     1001         7101 Jul 28  2020 wp-activate.php
+drwxr-xr-x    9 1001     1001         4096 Dec 08 22:13 wp-admin
+-rw-r--r--    1 1001     1001          351 Feb 06  2020 wp-blog-header.php
+-rw-r--r--    1 1001     1001         2328 Oct 08 21:15 wp-comments-post.php
+-rw-r--r--    1 0        0            3194 Jan 11 09:55 wp-config.php
+drwxr-xr-x    4 1001     1001         4096 Dec 08 22:13 wp-content
+-rw-r--r--    1 1001     1001         3939 Jul 30  2020 wp-cron.php
+drwxr-xr-x   25 1001     1001        12288 Dec 08 22:13 wp-includes
+-rw-r--r--    1 1001     1001         2496 Feb 06  2020 wp-links-opml.php
+-rw-r--r--    1 1001     1001         3300 Feb 06  2020 wp-load.php
+-rw-r--r--    1 1001     1001        49831 Nov 09 10:53 wp-login.php
+-rw-r--r--    1 1001     1001         8509 Apr 14  2020 wp-mail.php
+-rw-r--r--    1 1001     1001        20975 Nov 12 14:43 wp-settings.php
+-rw-r--r--    1 1001     1001        31337 Sep 30 21:54 wp-signup.php
+-rw-r--r--    1 1001     1001         4747 Oct 08 21:15 wp-trackback.php
+-rw-r--r--    1 1001     1001         3236 Jun 08  2020 xmlrpc.php
+226 Directory send OK.
+```
+
+
