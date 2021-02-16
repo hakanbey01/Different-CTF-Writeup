@@ -46,7 +46,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2021/02/16 12:19:41 Starting gobuster
 ===============================================================
 /wp-content (Status: 301)
-/announcements (Status: 301)
+/an*********** (Status: 301)
 /wp-includes (Status: 301)
 /javascript (Status: 301)
 /wp-admin (Status: 301)
@@ -56,5 +56,13 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2021/02/16 12:28:38 Finished
 ===============================================================
 ```
-asafasf
-
+<h3><b>Let's visit the directory we found</b></h3>
+```
+Index of /an***********
+[ICO]	Name	Last modified	Size	Description
+[PARENTDIR]	Parent Directory	 	- 	 
+[IMG]	           austrailian-bulldog-ant.jpg	2021-01-11 11:51 	58K	 
+[TXT]	           wordlist.txt	           2021-01-11 13:48 	394K	 
+Apache/2.4.29 (Ubuntu) Server at 10.10.70.160 Port 80
+```
+aaaa
