@@ -71,10 +71,12 @@ Index of /an***********
 Apache/2.4.29 (Ubuntu) Server at 10.10.70.160 Port 80
 ```
 **Let's get these two files**
+
 **Command:** `wget http://10.10.70.160/announcements/austrailian-bulldog-ant.jpg && wget http://10.10.70.160/announcements/wordlist.txt`
 
 **Let's brute the photo using stegcracker
-Command:** `stegcracker austrailian-bulldog-ant.jpg wordlist.txt`
+
+**Command:** `stegcracker austrailian-bulldog-ant.jpg wordlist.txt`
 
 ```
 StegCracker 2.0.9 - (https://github.com/Paradoxis/StegCracker)
@@ -88,20 +90,23 @@ Your file has been written to: austrailian-bulldog-ant.jpg.out
 1**************r
 ```
 **Now we can look at our photo with steghide
-Command:** `steghide extract -sf austrailian-bulldog-ant.jpg`
+
+**Command:** `steghide extract -sf austrailian-bulldog-ant.jpg`
 
 ```
 Enter passphrase: 
 wrote extracted data to "user-pass-ftp.txt".
 ```
 **Let's read the file named user-pass-ftp.txt
-Command:** `cat user-pass-ftp.txt`
+
+**Command:** `cat user-pass-ftp.txt`
 
 ```
 RlRQLUxPR0lOClVT****************************M2FkYW5hY3JhY2s=
 ```
 **Encrypted with base64
-Command:** `cat user-pass-ftp.txt |base64 -d`
+
+**Command:** `cat user-pass-ftp.txt |base64 -d`
 
 ```
 FTP-LOGIN
@@ -109,7 +114,8 @@ USER: h******p
 PASS: 1***********k
 ```
 **Pretty good ... We can now connect via ftp port
-Command:** `ftp 10.10.70.160` & `ls -la`
+
+**Command:** `ftp 10.10.70.160` & `ls -la`
 
 ```
 ftp> ls -la
