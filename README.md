@@ -73,7 +73,7 @@ Apache/2.4.29 (Ubuntu) Server at 10.10.70.160 Port 80
 <b>Command:</b> `wget http://10.10.70.160/announcements/austrailian-bulldog-ant.jpg && wget http://10.10.70.160/announcements/wordlist.txt`
 
 <h3><b>Let's brute the photo using stegcracker</b></h3>
-<b>Command:</b>`stegcracker austrailian-bulldog-ant.jpg wordlist.txt`
+<b>Command:</b> `stegcracker austrailian-bulldog-ant.jpg wordlist.txt`
 
 ```
 StegCracker 2.0.9 - (https://github.com/Paradoxis/StegCracker)
@@ -81,10 +81,31 @@ Copyright (c) 2021 - Luke Paris (Paradoxis)
 
 Counting lines in wordlist..
 Attacking file 'austrailian-bulldog-ant.jpg' with wordlist 'wordlist.txt'..
-Successfully cracked file with password: 123adanaantinwar
+Successfully cracked file with password: 1**************r
 Tried 49508 passwords
 Your file has been written to: austrailian-bulldog-ant.jpg.out
-123adanaantinwar
+1**************r
 ```
-aaa
+<h3><b>Now we can look at our photo with steghide</b></h3>
+<b>Command:</b> `steghide extract -sf austrailian-bulldog-ant.jpg`
 
+```
+Enter passphrase: 
+wrote extracted data to "user-pass-ftp.txt".
+```
+<h3><b>Let's read the file named user-pass-ftp.txt</b></h3>
+<b>Command:</b> `cat user-pass-ftp.txt`
+
+```
+RlRQLUxPR0lOClVT****************************M2FkYW5hY3JhY2s=
+```
+<h3><b>Encrypted with base64</b></h3>
+<b>Command:</b> `cat user-pass-ftp.txt |base64 -d`
+
+```
+FTP-LOGIN
+USER: h******p
+PASS: 1***********k
+```
+<h3><b>Pretty good ... We can now connect via ftp port</b></h3>
+<b>Command:</b> `
