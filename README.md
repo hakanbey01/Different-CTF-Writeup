@@ -360,4 +360,41 @@ __isoc99_scanf(0x561c5b518edd, 0x7fff99056ac0, 0, 0I think you should enter the 
 **Now let's run the file and enter the correct word.**
 
 **Command:**`./binary`
+
 ```
+I think you should enter the correct string here ==>w*************
+Hint! : Hexeditor 00000020 ==> ???? ==> /home/hakanbey/root.jpg (CyberChef)
+
+Copy /root/root.jpg ==> /home/hakanbey/root.jpg
+```
+**He gave us a tip and a photo. Let's take the photo and examine it with hexeditor**
+
+```
+00000000  FF D8 FF E0  00 10 4A 46   49 46 00 01  01 01 00 60                                                                                             ......JFIF.....`
+00000010  00 60 00 00  FF E1 00 78   45 78 69 66  00 00 4D 4D                                                                                             .`.....xExif..MM
+00000020  ** ** ** **  ** ** ** **   ** ** ** **  ** ** ** **                                                                                             ...=y._..m..i..u
+00000030  00 00 00 56  03 01 00 05   00 00 00 01  00 00 00 68                                                                                             ...V...........h
+00000040  03 03 00 01  00 00 00 01   00 00 00 00  51 10 00 01                                                                                             ............Q...
+00000050  00 00 00 01  01 00 00 00   51 11 00 04  00 00 00 01                                                                                             ........Q.......
+00000060  00 00 0E C4  51 12 00 04   00 00 00 01  00 00 0E C4                                                                                             ....Q...........
+00000070  00 00 00 00  41 64 6F 62   65 20 49 6D  61 67 65 52                                                                                             ....Adobe ImageR
+00000080  65 61 64 79  00 00 00 01   86 A0 00 00  B1 8F FF DB                                                                                             eady............
+00000090  00 43 00 02  01 01 02 01   01 02 02 02  02 02 02 02                                                                                             .C..............
+000000A0  02 03 05 03  03 03 03 03   06 04 04 03  05 07 06 07                                                                                             ................
+```
+
+**He gave us a line at the tip and stated it as cyberchef. Let's take the HEX codes on the line given to us and move on to cyberchef.**
+```
+Input: ** ** ** **  ** ** ** **   ** ** ** **  ** ** ** **
+(From HEX)
+(To Base85)
+Output: root:***************
+```
+**Finally, we can read our root flag.**
+
+**Command:**`cd /root` & `cat root.txt`
+```
+THM{c5a9d3*******************4466a6c}
+```
+
+**Thank you for reading and solving**
